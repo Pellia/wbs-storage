@@ -4,9 +4,9 @@ const userInput = document.getElementById("userInput");
 
 // Submit
 document.querySelector("button").addEventListener("click", function (event) {
-    event.preventDefault();
     const userValue = userInput.value.trim();
 
+    // Truthy Value
     if (userValue) {
         // Store Data
         const storedArray = JSON.parse(localStorage.getItem("myArray")) || [];
@@ -24,6 +24,7 @@ document.querySelector("button").addEventListener("click", function (event) {
         // Reset input field
         userInput.value = "";
     } else {
+        event.preventDefault();
         alert("Please enter a value");
     }
 });
